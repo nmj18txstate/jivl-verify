@@ -1,0 +1,24 @@
+name: Feature request
+description: Propose a new capability or verification rule.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: rfc
+    attributes:
+      label: RFC required?
+      options:
+        - label: This affects verification policy, severities, badge
+            semantics, module boundaries, CLI flags, or schemas, so it
+            needs an RFC before implementation (see docs/rfcs/README.md).

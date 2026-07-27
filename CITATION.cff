@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use JIVL in academic or research work, please cite it as below."
+title: "JIVL: JVM Intelligence Verification Layer"
+abstract: >
+  JIVL is an independent open-source verification layer for JVM-focused Agent
+  Skills. It produces structural, security, provenance, Java-compilation,
+  Maven/Gradle build, JDK-compatibility, and framework-compatibility evidence,
+  and defines a reproducible model for agent effectiveness evaluation.
+authors:
+  - family-names: "Jigyasu"
+    given-names: "Nityam"
+    alias: "nmj18txstate"
+repository-code: "https://github.com/nmj18txstate/jivl-verify"
+license: Apache-2.0
+version: 0.1.0-SNAPSHOT
+date-released: "2026-07-27"

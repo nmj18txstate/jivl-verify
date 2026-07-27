@@ -1,0 +1,29 @@
+name: Security rule proposal or false positive
+description: Propose a new jivl-security rule, or report a false positive/negative.
+labels: ["security", "jivl-security"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - New rule proposal
+        - False positive
+        - False negative (missed detection)
+    validations:
+      required: true
+  - type: textarea
+    id: pattern
+    attributes:
+      label: Pattern description (do not paste real secrets)
+      description: >
+        Describe the pattern in the abstract. Do not paste live credentials,
+        even redacted-looking ones, into a public issue.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why this matters / remediation guidance
+    validations:
+      required: true

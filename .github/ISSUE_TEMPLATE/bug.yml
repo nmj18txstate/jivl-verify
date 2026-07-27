@@ -1,0 +1,25 @@
+name: Bug report
+description: Something in JIVL behaves incorrectly.
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: JIVL version / commit
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: >
+        Ideally a minimal skill directory (structure only — do not attach
+        real secrets or proprietary code).
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs. actual behavior
+    validations:
+      required: true
