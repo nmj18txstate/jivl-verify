@@ -1,7 +1,7 @@
 # RFC-0001: JIVL Vision
 
 - **Author:** Nityam Jigyasu (@nmj18txstate)
-- **Status:** Draft
+- **Status:** Accepted
 - **Created:** 2026-07-27
 - **Last updated:** 2026-07-28
 
@@ -87,3 +87,11 @@ long-lived, potentially-consumed-by-others artifact.
   self-approval and has been corrected. Per `docs/rfcs/README.md`, only
   Nityam Jigyasu (or a future authorized maintainer) may move this RFC to
   `Accepted`, and implementation may not proceed until that happens.
+- 2026-07-28: **Accepted by Nityam Jigyasu (@nmj18txstate), Lead
+  Maintainer**, as JIVL's founding thesis, following the readiness review
+  in `docs/rfcs/PHASE-1-RFC-REVIEW.md` (§1) and its recommended scope
+  clarification. This acceptance authorizes continued planning and
+  incremental implementation of the thesis described here; it does **not**
+  automatically authorize every detailed module design. RFC-0002 through
+  RFC-0008, and any future RFC, must each independently reach `Accepted`
+  before implementation of the scope they govern begins.
