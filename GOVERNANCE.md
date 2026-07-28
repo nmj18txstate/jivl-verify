@@ -43,8 +43,8 @@ Maintainers other than the Lead Maintainer as of this writing.
 
 ## RFC Lifecycle
 
-RFCs move through: `Draft` -> `Proposed` -> `Accepted` | `Rejected` ->
-(optionally) `Superseded`. See `docs/rfcs/README.md` for the full template
+RFCs move through: `Draft` -> `Proposed` -> `Accepted` -> `Implemented` |
+`Superseded` | `Rejected`. See `docs/rfcs/README.md` for the full template
 and current RFC index.
 
 ## Security Disclosure Process

@@ -1,9 +1,9 @@
 # RFC-0002: Verification Report Model
 
 - **Author:** Nityam Jigyasu (@nmj18txstate)
-- **Status:** Accepted
+- **Status:** Draft
 - **Created:** 2026-07-27
-- **Last updated:** 2026-07-27
+- **Last updated:** 2026-07-28
 
 ## Summary
 
@@ -81,5 +81,11 @@ an accompanying `schemas/jivl-report.schema.json` update.
 
 ## Decision History
 
-- 2026-07-27: Accepted; implementation deferred to Phase 1 (see
+- 2026-07-27: Initial draft created, proposing this report model, with
+  implementation planned for Phase 1 (see
   `docs/implementation-status.md`).
+- 2026-07-28: Status confirmed/reset to `Draft`. This RFC was not accepted
+  by the Lead Maintainer; the prior "Accepted" note above was a
+  self-approval and has been corrected. Per `docs/rfcs/README.md`, only
+  Nityam Jigyasu (or a future authorized maintainer) may move this RFC to
+  `Accepted`, and implementation may not proceed until that happens.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.nmj18txstate.jivl</groupId>
+    <artifactId>jivl-parent</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>jivl-evaluations</artifactId>
+  <packaging>jar</packaging>
+
+  <name>JIVL Evaluations</name>
+  <description>
+    Evaluation-spec parsing, baseline/with-skill result model, and
+    provider-neutral adapters. Intended to depend on jivl-core, and on
+    jivl-reporting only where a later implementation justifies it. No
+    inter-module dependency is declared yet in Phase 0, and no production
+    classes exist yet.
+  </description>
+</project>

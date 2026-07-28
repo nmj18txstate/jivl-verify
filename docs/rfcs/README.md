@@ -14,15 +14,19 @@ one.
 
 ## Lifecycle
 
-`Draft` -> `Proposed` -> `Accepted` | `Rejected` -> (optionally) `Superseded`
+`Draft` -> `Proposed` -> `Accepted` -> `Implemented` | `Superseded` | `Rejected`
 
-- **Draft** — being written, not yet ready for review.
-- **Proposed** — open for discussion.
-- **Accepted** — the Lead Maintainer (see `GOVERNANCE.md`) has accepted it;
-  implementation may proceed.
-- **Rejected** — will not be implemented as proposed; the "Decision
-  History" section records why.
+- **Draft** — under development, not yet ready for public review.
+- **Proposed** — ready for public review.
+- **Accepted** — explicitly approved by Nityam Jigyasu (see `GOVERNANCE.md`)
+  or a future authorized maintainer; implementation may proceed.
+- **Implemented** — the corresponding implementation and tests exist.
 - **Superseded** — a later RFC replaces this one; link both directions.
+- **Rejected** — intentionally not proceeding; the "Decision History"
+  section records why.
+
+An RFC must not set its own status to `Accepted` or `Implemented`; only the
+Lead Maintainer (or a future authorized maintainer) may make that change.
 
 ## Required Sections
 
@@ -35,10 +39,10 @@ questions, Decision history.
 
 | RFC | Title | Status |
 |---|---|---|
-| [RFC-0001](RFC-0001-jivl-vision.md) | JIVL Vision | Accepted |
-| [RFC-0002](RFC-0002-verification-report-model.md) | Verification Report Model | Accepted |
-| [RFC-0003](RFC-0003-jvm-compatibility-metadata.md) | JVM Compatibility Metadata | Accepted |
-| [RFC-0004](RFC-0004-security-model.md) | Security Model | Accepted |
-| [RFC-0005](RFC-0005-provenance-policy.md) | Provenance Policy | Accepted |
-| [RFC-0006](RFC-0006-effectiveness-evaluation.md) | Effectiveness Evaluation | Accepted |
-| [RFC-0007](RFC-0007-jvmskills-integration.md) | JVMskills.com Integration | Accepted (proposal stage; awaiting external feedback) |
+| [RFC-0001](RFC-0001-jivl-vision.md) | JIVL Vision | Draft |
+| [RFC-0002](RFC-0002-verification-report-model.md) | Verification Report Model | Draft |
+| [RFC-0003](RFC-0003-jvm-compatibility-metadata.md) | JVM Compatibility Metadata | Draft |
+| [RFC-0004](RFC-0004-security-model.md) | Security Model | Draft |
+| [RFC-0005](RFC-0005-provenance-policy.md) | Provenance Policy | Draft |
+| [RFC-0006](RFC-0006-effectiveness-evaluation.md) | Effectiveness Evaluation | Draft |
+| [RFC-0007](RFC-0007-jvmskills-integration.md) | JVMskills.com Integration | Draft |

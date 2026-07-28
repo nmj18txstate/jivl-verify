@@ -60,7 +60,25 @@ does not claim a skill improves an agent unless a baseline-vs-with-skill
 evaluation has actually executed and produced verifiable results. See
 `docs/competitive-landscape.md` for how this compares to existing tools.
 
-## Current MVP Scope
+## Target MVP Scope
+
+Nothing below is implemented yet unless explicitly marked **Implemented
+(Phase 0)**. See `docs/implementation-status.md` for the current,
+evidence-based build/test state, and `docs/implementation-plan.md` for the
+phase gates.
+
+### Implemented (Phase 0)
+
+- Java 21 Maven multi-module reactor (root `pom.xml` plus module POMs) that
+  builds successfully via the Maven Wrapper.
+- Governance, contributor, and RFC/ADR process documentation.
+- GitHub Actions CI foundation running `./mvnw -B -ntp clean verify`.
+
+No verification rule, CLI command, report, badge, or registry endpoint
+exists yet. Module directories other than their `pom.xml` are currently
+empty.
+
+### Planned for Phase 1 — Verify engine and CLI
 
 - Native Java implementation of Agent Skills structural/frontmatter validation.
 - Deterministic static security scanning with redacted evidence.
@@ -70,13 +88,32 @@ evaluation has actually executed and produced verifiable results. See
   opt-in) build execution.
 - JDK and JVM-framework compatibility evidence, with a hard distinction
   between *declared* and *verified*.
+- A Picocli-based CLI (`jivl-cli.jar`).
+
+### Planned for Phase 2 — Reports, badges, CI groundwork
+
+- Text, Markdown, and JSON reports, plus a locally generated SVG trust badge.
+- Example GitHub Action workflow groundwork (not the Action itself — see
+  Phase 4/documentation-only items below).
+
+### Planned for Phase 4 — Registry
+
+- A read-only, file-backed registry website (Spring Boot + Thymeleaf) for
+  browsing generated reports.
+
+### Provider-neutral effectiveness evaluation (Phase 1/2, cross-cutting)
+
 - A provider-neutral, non-fabricating agent-effectiveness evaluation model
   (baseline vs. with-skill), reporting "Evaluation Pending" when no agent
   adapter is configured.
-- Text, Markdown, and JSON reports, plus a locally generated SVG trust badge.
-- A Picocli-based CLI (`jivl-cli.jar`) and a composite GitHub Action wrapper.
-- A read-only, file-backed registry website (Spring Boot + Thymeleaf) for
-  browsing generated reports.
+
+### Documentation-only future phases
+
+- `jivl-github-action` composite Action wrapper: prototype, not published.
+- JIVL Academy / JIVL Research (Phase 5) and JIVL Enterprise / Marketplace
+  (Phase 6): documentation only, see `docs/roadmap.md` and the linked
+  roadmap docs. No production functionality is planned for these in this
+  MVP.
 
 ## Explicit Non-Goals (for this MVP)
 
@@ -90,6 +127,9 @@ evaluation has actually executed and produced verifiable results. See
 - No database — the registry is file-backed against `registry-data/`.
 
 ## Module Overview
+
+Target responsibility per module (see "Target MVP Scope" above for what is
+actually implemented today — Phase 0 only, no production logic yet):
 
 | Module | Responsibility |
 |---|---|
@@ -109,6 +149,10 @@ the concise contributor-facing map.
 
 ## CLI Quick Start
 
+> **Planned interface — not implemented or released yet.** `jivl-cli.jar`
+> does not exist yet; `jivl-cli` currently has only a placeholder `pom.xml`.
+> The commands below describe the intended Phase 1 interface.
+
 ```bash
 ./mvnw -B -ntp clean package
 java -jar jivl-cli/target/jivl-cli.jar verify samples/valid-java-skill \
@@ -122,7 +166,7 @@ Key options: `--format text|json|markdown|all`, `--fail-on-warn`,
 Exit codes: `0` PASS/WARN, `1` any FAIL, `2` invalid usage/input, `3` WARN
 with `--fail-on-warn`, `4` internal JIVL error.
 
-### Example Text Report (illustrative)
+### Example Text Report (illustrative — Planned interface, not implemented or released yet)
 
 ```
 JIVL Verification Report
@@ -140,7 +184,7 @@ Findings: 0 FAIL, 1 WARN, 3 PASS, 1 SKIPPED
 Advisory: static and build-time checks do not prove complete safety.
 ```
 
-### Example Markdown Report (illustrative)
+### Example Markdown Report (illustrative — Planned interface, not implemented or released yet)
 
 ```markdown
 ## JIVL Verification: PASS WITH WARNINGS
@@ -159,6 +203,9 @@ effectiveness improvement._
 
 ## Badge Trust Model
 
+> **Planned interface — not implemented or released yet.** No badge
+> generation code exists yet.
+
 A badge only ever reflects report content — it cannot be hand-set. The MVP
 only ever emits `LOCAL_SELF_VERIFICATION` or `CI_SELF_VERIFICATION`
 attestation types; it never emits (and never displays) a hosted attestation,
@@ -167,9 +214,13 @@ because that service does not exist yet. See
 
 ## Registry Website
 
+> **Planned interface — not implemented or released yet.** `jivl-registry`
+> currently has only a placeholder `pom.xml`; no Spring Boot application
+> code exists yet, and no `jivl-registry-0.1.0-SNAPSHOT.jar` is produced.
+
 `jivl-registry` is a read-only Spring Boot app that renders JSON reports
 already sitting in `registry-data/`. It never executes a skill, a build, or
-a script. Start it (after building) with:
+a script. Once implemented, it will be started (after building) with:
 
 ```bash
 java -jar jivl-registry/target/jivl-registry-0.1.0-SNAPSHOT.jar
