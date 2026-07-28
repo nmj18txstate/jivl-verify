@@ -89,3 +89,20 @@ an accompanying `schemas/jivl-report.schema.json` update.
   self-approval and has been corrected. Per `docs/rfcs/README.md`, only
   Nityam Jigyasu (or a future authorized maintainer) may move this RFC to
   `Accepted`, and implementation may not proceed until that happens.
+- 2026-07-28: **Explicit governance decision by Nityam Jigyasu
+  (@nmj18txstate), Lead Maintainer**, following the readiness review in
+  `docs/rfcs/PHASE-1-RFC-REVIEW.md` (§2): this RFC **remains `Draft`** and
+  is **not** partially accepted. The Finding-domain portion (
+  `FindingStatus`, `FindingSeverity`, `FindingCategory`, `RuleId`, and the
+  `Finding` record) is being extracted into a new, independently-accepted
+  RFC, [RFC-0008](RFC-0008-core-findings-and-verification-contracts.md).
+  Everything else originally scoped to this RFC stays here and remains
+  unresolved: the full JSON report envelope's top-level fields,
+  `schemaVersion`, `reportDigest` computation and its excluded-field list,
+  the environment-summary field list, compatibility policy for the report
+  schema, and report serialization generally. This RFC will be
+  reconsidered no earlier than Phase 2 planning. No partial-`Accepted`
+  status is being used for this RFC because the RFC lifecycle defined in
+  `docs/rfcs/README.md` does not define a partial-acceptance state — see
+  that document's "Cross-Cutting Note for Both RFCs" for the alternative
+  considered and chosen here.
