@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.nmj18txstate.jivl</groupId>
+    <artifactId>jivl-parent</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>jivl-gradle</artifactId>
+  <packaging>jar</packaging>
+
+  <name>JIVL Gradle Integration</name>
+  <description>
+    Gradle project detection, metadata extraction, and bounded build
+    execution. Intended to depend only on jivl-core; no inter-module
+    dependency is declared yet in Phase 0, and no production classes exist
+    yet.
+  </description>
+</project>

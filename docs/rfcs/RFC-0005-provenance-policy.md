@@ -1,7 +1,7 @@
 # RFC-0005: Provenance Policy
 
 - **Author:** Nityam Jigyasu (@nmj18txstate)
-- **Status:** Accepted
+- **Status:** Draft
 - **Created:** 2026-07-27
 - **Last updated:** 2026-07-27
 

@@ -1,7 +1,7 @@
 # RFC-0007: JVMskills.com Integration
 
 - **Author:** Nityam Jigyasu (@nmj18txstate)
-- **Status:** Accepted (proposal stage; awaiting external feedback)
+- **Status:** Draft
 - **Created:** 2026-07-27
 - **Last updated:** 2026-07-27
 

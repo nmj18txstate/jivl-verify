@@ -1,7 +1,7 @@
 # RFC-0003: JVM Compatibility Metadata
 
 - **Author:** Nityam Jigyasu (@nmj18txstate)
-- **Status:** Accepted
+- **Status:** Draft
 - **Created:** 2026-07-27
 - **Last updated:** 2026-07-27
 

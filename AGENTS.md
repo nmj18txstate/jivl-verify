@@ -96,6 +96,34 @@ Windows: `mvnw.cmd -B -ntp clean verify`
 - Update `docs/implementation-status.md` at the end of every implemented
   phase: completed work, remaining work, test counts, latest build result.
 
+## Cross-Session Contributor Instructions
+
+Every future contributor or agent picking up this repository — in a new
+session, a new sandbox, or a new machine — must, before writing any code:
+
+1. Read this file (`AGENTS.md`) first.
+2. Read `docs/implementation-plan.md` for the full phase-gate checklist.
+3. Read `docs/implementation-status.md` for the current, evidence-based
+   state: branch, commit, build result, completed/incomplete items.
+4. Inspect the current branch and worktree directly (`git status --short
+   --branch`, `git log -1 --oneline`) rather than trusting stale status
+   claims from a prior session or a different environment.
+5. Continue from the first incomplete phase gate recorded in
+   `docs/implementation-status.md` — do not restart finished phases and do
+   not skip ahead into a later phase's scope.
+6. Avoid regenerating work that is already implemented and already passing
+   its tests; extend or fix it instead.
+7. Run the applicable tests (`./mvnw -B -ntp clean verify` or
+   `mvnw.cmd -B -ntp clean verify` on Windows) before stopping work.
+8. Update `docs/implementation-status.md` before stopping: exact commit,
+   exact command run, exact result, honest test count, known limitations.
+9. Record the next exact action in `docs/implementation-status.md` so the
+   next session does not have to re-derive it.
+10. Preserve exact failure evidence (command run, full error output) rather
+    than summarizing or omitting a failure.
+11. Never push, publish, deploy, or create a release without explicit,
+    in-session approval from a human maintainer.
+
 ## Final Verification Command
 
 Before considering any phase complete:
