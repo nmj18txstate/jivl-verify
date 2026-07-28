@@ -3,7 +3,7 @@
 - **Author:** Nityam Jigyasu (@nmj18txstate)
 - **Status:** Draft
 - **Created:** 2026-07-27
-- **Last updated:** 2026-07-27
+- **Last updated:** 2026-07-28
 
 ## Summary
 
@@ -76,5 +76,15 @@ exception.
 
 ## Decision History
 
-- 2026-07-27: Accepted as a documented proposal. Remains gated on real
-  outreach and feedback before any further action.
+- 2026-07-27: Initial draft created, proposing a non-blocking, advisory
+  integration with JVMskills.com's existing review process.
+- 2026-07-28: Status confirmed/reset to `Draft`. This RFC was not accepted
+  by the Lead Maintainer; the prior "Accepted" note above was a
+  self-approval and has been corrected. Per `docs/rfcs/README.md`, only
+  Nityam Jigyasu (or a future authorized maintainer) may move this RFC to
+  `Accepted`, and implementation may not proceed until that happens.
+  Separately and in addition to Lead Maintainer acceptance: JVMskills.com
+  has not been contacted, and their feedback and any integration approval
+  remain pending. Neither this RFC's Lead Maintainer acceptance nor
+  JVMskills.com's own review has occurred, and both are required before
+  any implementation proceeds.

@@ -3,7 +3,7 @@
 - **Author:** Nityam Jigyasu (@nmj18txstate)
 - **Status:** Draft
 - **Created:** 2026-07-27
-- **Last updated:** 2026-07-27
+- **Last updated:** 2026-07-28
 
 ## Summary
 
@@ -80,5 +80,10 @@ long-lived, potentially-consumed-by-others artifact.
 
 ## Decision History
 
-- 2026-07-27: Accepted as the founding thesis for the MVP scope described
-  in `docs/implementation-plan.md`.
+- 2026-07-27: Initial draft created, proposing this founding thesis for the
+  MVP scope described in `docs/implementation-plan.md`.
+- 2026-07-28: Status confirmed/reset to `Draft`. This RFC was not accepted
+  by the Lead Maintainer; the prior "Accepted" note above was a
+  self-approval and has been corrected. Per `docs/rfcs/README.md`, only
+  Nityam Jigyasu (or a future authorized maintainer) may move this RFC to
+  `Accepted`, and implementation may not proceed until that happens.

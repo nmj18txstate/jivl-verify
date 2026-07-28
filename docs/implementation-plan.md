@@ -21,45 +21,56 @@ Phase 0 is complete only when every gate below is checked, with evidence in
 `docs/implementation-status.md`. A gate may not be checked based on intent
 or partial progress — only on verified, current repository state.
 
-- [ ] Root Java 21 Maven reactor exists (`pom.xml`, packaging `pom`,
+- [x] Root Java 21 Maven reactor exists (`pom.xml`, packaging `pom`,
       `maven.compiler.release=21`).
-- [ ] Root `pom.xml` centralizes plugin management (Compiler, Surefire,
+- [x] Root `pom.xml` centralizes plugin management (Compiler, Surefire,
       Enforcer) with pinned, non-snapshot versions.
-- [ ] Maven Wrapper present and structurally valid: `mvnw`, `mvnw.cmd`,
+- [x] Maven Wrapper present and structurally valid: `mvnw`, `mvnw.cmd`,
       `.mvn/wrapper/maven-wrapper.properties` (and
       `maven-wrapper.jar`/`MavenWrapperDownloader` if the selected wrapper
       type requires it), generated via an installed Maven or another
-      verified official mechanism — never hand-fabricated.
-- [ ] Every intended Maven module (`jivl-core`, `jivl-security`,
+      verified official mechanism — never hand-fabricated. `mvnw` is
+      committed with the executable bit set (mode `100755`; see commit
+      `ecb111d`), which CI confirmed by actually invoking `./mvnw` on
+      Ubuntu.
+- [x] Every intended Maven module (`jivl-core`, `jivl-security`,
       `jivl-maven`, `jivl-gradle`, `jivl-reporting`, `jivl-evaluations`,
       `jivl-cli`, `jivl-registry`, `jivl-test-fixtures`) has a valid,
       dependency-minimal `pom.xml` and is declared as a `<module>` in the
       root reactor.
-- [ ] Module dependency directions are documented (`AGENTS.md`,
+- [x] Module dependency directions are documented (`AGENTS.md`,
       `docs/architecture.md`) and no module POM violates them.
-- [ ] Governance and contributor documents are present and accurate:
+- [x] Governance and contributor documents are present and accurate:
       `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`,
       `SECURITY.md`, `CITATION.cff`.
-- [ ] RFC process (`docs/rfcs/README.md`, RFC-0001..0007) and ADR process
+- [x] RFC process (`docs/rfcs/README.md`, RFC-0001..0007) and ADR process
       (`docs/adr/`) are present, with RFCs in an honest `Draft` state (none
-      self-approved).
-- [ ] `.github/workflows/ci.yml` exists, triggers on PRs and pushes to
+      self-approved) — both the `Status` field and each RFC's Decision
+      History now agree that none has been accepted.
+- [x] `.github/workflows/ci.yml` exists, triggers on PRs and pushes to
       `main`, uses `contents: read` permissions, Temurin Java 21, and runs
       `./mvnw -B -ntp clean verify`.
-- [ ] The complete reactor builds successfully via the Maven Wrapper:
+- [x] The complete reactor builds successfully via the Maven Wrapper:
       `mvnw.cmd -B -ntp clean verify` (Windows) /
       `./mvnw -B -ntp clean verify` (Unix), with the exact command, exact
       result, and exact environment recorded in
-      `docs/implementation-status.md`.
-- [ ] `docs/implementation-status.md` reflects only actually-verified
+      `docs/implementation-status.md`. This is now also confirmed by an
+      actual GitHub Actions run on Temurin JDK 21 (commit `ecb111d`, check
+      run `build`, `conclusion: success`,
+      https://github.com/nmj18txstate/jivl-verify/actions/runs/30379640313/job/90344021349),
+      not just the local Windows run.
+- [x] `docs/implementation-status.md` reflects only actually-verified
       evidence — no claimed test count, build result, or module status that
       was not directly observed in this environment.
-- [ ] No Phase 1+ feature (verification rules, CLI commands, report
+- [x] No Phase 1+ feature (verification rules, CLI commands, report
       generation, registry endpoints, evaluation logic) is implemented or
       claimed as implemented under the Phase 0 label.
 
-Phase 0 may be marked **Complete** in `docs/implementation-status.md` only
-once every box above is checked with direct evidence.
+All gates above are checked based on direct evidence: the local Windows
+Maven Wrapper build (`docs/implementation-status.md`) and the real GitHub
+Actions CI run on Temurin JDK 21 linked above, which exercises the Unix
+wrapper (`./mvnw`) end to end rather than only structurally. Phase 0 is
+recorded as **Complete** in `docs/implementation-status.md` on this basis.
 
 ## Sequencing Rationale
 
